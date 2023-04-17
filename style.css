@@ -1,0 +1,93 @@
+.attribution {
+    font-size: 11px; 
+    text-align: center;
+}
+    
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.body-container{
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+body{
+    background-image: url("images/bg-intro-mobile.png");
+    background-color: hsl(0, 100%, 74%);
+    color: white;
+}
+
+h1,p{
+    text-align: center;
+}
+
+.purple-btn{
+    padding: 20px;
+    background-color: hsl(248, 32%, 49%);
+    color: white;
+    width: 100%;
+    border: none;
+    box-shadow:  0px 5px rgba(82, 82, 82, 0.295);
+}
+
+#claim{
+    background-color: hsl(154, 59%, 51%);
+    color: white;
+    width: 100%;
+}
+
+#form{
+    padding: 20px;
+    /* margin-top: 30px; */
+    /* display: flex;
+    flex-direction: column; */
+    background-color: white;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow:  0px 5px rgba(82, 82, 82, 0.295);
+}
+
+#form > p{
+    color: red;
+    /* font-size: 12px; */
+    float: right; 
+    font-style: italic;
+}
+
+.terms{
+    color: hsl(246, 25%, 77%);
+    margin-top: -10px;
+    /* margin-bottom: 20px; */
+}
+
+a{
+    color: hsl(0, 100%, 74%);
+}
+
+input, button{
+    border: 1px hsl(246, 25%, 77%) solid;
+    border-radius: 5px;
+    padding: 10px 0px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 500px)and (max-width:1440px){
+    .body-container{
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1,p{
+        text-align: left;
+    }
+}
