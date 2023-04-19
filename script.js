@@ -2,62 +2,98 @@ document.getElementById("claim").addEventListener("click", validateForm);
 document.getElementById("form").addEventListener("click", function(event){
     event.preventDefault()
 });
+
+const fname = document.getElementById("fname");
+const fnameText = document.getElementById("fnameText");
+const lnameText = document.getElementById("lnameText");
+const lname = document.getElementById("lname");
+const emailInput = document.getElementById("emailInput");
+const email = document.getElementById("email");
+const passInput = document.getElementById("passInput");
+const pass = document.getElementById("input");
+
 function validateForm(){
     firstName();
     lastName();
-    email();
+    emailValidation();
     password();
 }
 
 function firstName(){
     let x = document.forms["form"]["fname"].value
     if (x == "") {
-        document.getElementById("fnameText").innerHTML = "First Name cannot be empty";
+        fnameText.innerHTML = "First Name cannot be empty";
+        fname.style.backgroundImage = "url(images/icon-error.svg)";
+        fname.style.border = "solid hsl(0, 100%, 74%)";
+        fname.placeholder = "";
         return false;
     }
     else{
-        document.getElementById("fnameText").innerHTML = "";
+        fnameText.innerHTML = "";
+        fname.style.backgroundImage = "none";
+        fname.style.border = "1px solid grey";
     }
 }
 
 function lastName(){
     let x = document.forms["form"]["lname"].value
     if (x == "") {
-        document.getElementById("lnameText").innerHTML = "Last Name cannot be empty";
+        lnameText.innerHTML = "Last Name cannot be empty";
+        lname.style.backgroundImage = "url(images/icon-error.svg)";
+        lname.style.border = "solid hsl(0, 100%, 74%)";
+        lname.placeholder = "";
         return false;
     }
     else{
-        document.getElementById("lnameText").innerHTML = "";
+        lnameText.innerHTML = "";
+        lname.style.backgroundImage = "none";
+        lname.style.border = "1px solid grey";
     }
 }
 
-function email(){
+function emailValidation(){
     let x = document.forms["form"]["email"].value
     let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (x == "") {
-        document.getElementById("emailInput").innerHTML = "Please enter your email";
+        emailInput.innerHTML = "Please enter your email";
+        email.style.backgroundImage = "url(images/icon-error.svg)";
+        email.style.border = "solid hsl(0, 100%, 74%)";
+        email.placeholder = "";
         return false;
     }
     else if(x.match(emailFormat)){
-        document.getElementById("emailInput").innerHTML = "";
+        emailInput.innerHTML = "";
+        email.style.backgroundImage = "none";
+        email.style.border = "1px solid grey";
     }
     else{
-        document.getElementById("emailInput").innerHTML = "Looks like this is not an email";
+        emailInput.innerHTML = "Looks like this is not an email";
+        email.style.backgroundImage = "url(images/icon-error.svg)"
+        email.style.border = "solid hsl(0, 100%, 74%)";
+        email.placeholder = "email@example/com";
+        email.classList.add("placeholder");
     }
-    
 }
 
 function password(){
     let x = document.forms["form"]["password"].value
     if (x == "") {
-        document.getElementById("passInput").innerHTML = "Password cannot be empty";
+        passInput.innerHTML = "Password cannot be empty";
+        pass.style.backgroundImage = "url(images/icon-error.svg)";
+        pass.style.border = "solid hsl(0, 100%, 74%)";
+        pass.placeholder = "";
         return false;
     }
     else if(x.length<8){
-        document.getElementById("passInput").innerHTML = "Password should be at least 8 characters";
+        passInput.innerHTML = "Password should be at least 8 characters";
+        pass.style.backgroundImage = "url(images/icon-error.svg)";
+        pass.style.border = "solid hsl(0, 100%, 74%)";
+        pass.placeholder = "";
     }
     else{
-        document.getElementById("passInput").innerHTML = "";
+        passInput.innerHTML = "";
+        pass.style.backgroundImage = "none";
+        pass.style.border = "1px solid grey";
         document.getElementById("form").submit();
     }
 }

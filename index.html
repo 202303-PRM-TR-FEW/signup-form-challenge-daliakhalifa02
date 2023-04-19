@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
@@ -16,18 +18,26 @@
         but understanding how developers think is invaluable.</p>  
     </div>
     <div class="form-container">
-      <button class="purple-btn">Try it free 7 days then $20/mo. thereafter</button>
+      <button class="purple-btn"><a id="a">Try it free 7 days</a> then $20/mo. thereafter</button>
       <div>
         <form name="form" id="form">
-          <input type="text" placeholder="First Name" name="fname" id="fname">
-          <p id="fnameText"></p>
-          <input type="text" placeholder="Last Name" name="lname">
-          <p id="lnameText"></p>
-          <input type="text" placeholder="Email Address" name="email">
-          <p id="emailInput"></p>
-          <input type="password" placeholder="Password" name="password">
-          <p id="passInput"></p>
-          <button id="claim">Claim your free trial</button>
+          <div>
+            <input type="text" placeholder="First Name" name="fname" id="fname">
+            <p id="fnameText"></p>
+          </div>
+          <div>
+            <input type="text" placeholder="Last Name" name="lname" id="lname">
+            <p id="lnameText"></p>
+          </div>
+          <div>
+            <input type="text" placeholder="Email Address" name="email" id="email">
+            <p id="emailInput"></p>
+          </div>
+          <div>
+            <input type="password" placeholder="Password" name="password" id="input">
+            <p id="passInput"></p>
+          </div>
+          <button id="claim">CLAIM YOUR FREE TRIAL</button>
           <p class="terms">By clicking the button, you are agreeing to our <a>Terms and Services</a></p>
         </form>
       </div>
